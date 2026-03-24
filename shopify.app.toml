@@ -1,0 +1,28 @@
+name = "AI Readiness Auditor"
+client_id = "YOUR_CLIENT_ID_FROM_PARTNER_DASHBOARD"
+application_url = "https://YOUR_APP_URL.fly.dev"
+embedded = true
+
+[access_scopes]
+scopes = "read_products,read_content,read_themes,read_script_tags,read_metafields,read_online_store_pages"
+
+[auth]
+redirect_urls = [
+  "https://YOUR_APP_URL.fly.dev/auth/callback",
+  "https://YOUR_APP_URL.fly.dev/auth/shopify/callback",
+  "https://YOUR_APP_URL.fly.dev/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "YOUR_DEV_STORE.myshopify.com"

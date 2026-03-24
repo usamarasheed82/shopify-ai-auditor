@@ -1,0 +1,22 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "74ba63b5ce31318064cf087263e784f0"
+name = "AI Readiness Auditor"
+application_url = "https://pipeless-unawarely-leonardo.ngrok-free.dev"
+embedded = true
+
+[webhooks]
+api_version = "2026-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,read_content,read_themes,read_script_tags,read_online_store_pages"
+optional_scopes = [ ]
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [
+  "https://pipeless-unawarely-leonardo.ngrok-free.dev/auth/callback",
+  "https://pipeless-unawarely-leonardo.ngrok-free.dev/auth/shopify/callback",
+  "https://pipeless-unawarely-leonardo.ngrok-free.dev/api/auth/callback"
+]
