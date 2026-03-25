@@ -1,9 +1,23 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "framework": null,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/server" }
+  "builds": [
+    {
+      "src": "build/server/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/client/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/build/client/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/server/index.js"
+    }
   ]
 }
