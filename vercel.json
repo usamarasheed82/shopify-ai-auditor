@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/build/server/index.js" }
-  ]
+  "buildCommand": "prisma generate && npm run build",
+  "framework": null
 }
